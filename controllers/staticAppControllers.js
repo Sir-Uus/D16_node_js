@@ -1,7 +1,7 @@
 const produks = [];
 
 exports.Dashboard = (req, res) => {
-  res.render("index")
+  res.render("index");
 };
 exports.getHomeProduk = (req, res) => {
   res.render("produk", { myProduks: produks });
@@ -14,30 +14,30 @@ exports.saveProduk = (req, res) => {
   res.render("produk");
 };
 // karyawan
-const inputKaryawan = [];
-exports.getHomePage = (req, res) => {
-    res.render("inputKaryawan", { karyawanBudi: inputKaryawan});
-}
+const Karyawans = [];
+exports.getHomekaryawan = (req, res) => {
+  res.render("karyawan", { myKaryawan: Karyawans });
+};
 
-exports.getKaryawanPage = (req, res) => {
-    res.render("inputKaryawan");
-}
+exports.getTambahKaryawan = (req, res) => {
+  res.render("tambah_karyawan");
+};
 
 exports.saveKaryawan = (req, res) => {
-    inputKaryawan.push(req.body);
-    res.render("simpandata copy");
-}
+  Karyawans.push(req.body);
+  res.render("karyawan");
+};
 //DATA TRANSAKSI
-const inputdatatransaksi = [];
-exports.getHomePage = (req, res) => {
-    res.render("datatransaksi", { myData: inputdatatransaksi});
-}
+const transaksis = [];
+exports.getHomeTransaksi = (req, res) => {
+  res.render("transaksi", { myTransaksi: transaksis });
+};
 
-exports.getDataPage = (req, res) => {
-    res.render("inputdatatransaksi");
-}
+exports.getTambahTransaksi = (req, res) => {
+  res.render("tambah_transaksi");
+};
 
-exports.saveData = (req, res) => {
-    inputdatatransaksi.push(req.body);
-    res.render("simpandata");
-}
+exports.saveTransaksi = (req, res) => {
+  transaksis.push(req.body);
+  res.render("transaksi");
+};

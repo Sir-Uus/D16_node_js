@@ -1,0 +1,65 @@
+<main role="main" class="container mt-5">
+  <div class="card">
+    <h5 class="card-header">Tambah Data Transaksi</h5>
+    <div class="card-body">
+      <div>
+        <form action="/tambah_transaksi" method="post">
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">ID Transaksi :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="id_transaksi" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Nama Produk :</label>
+            </div>
+
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="nama_produk" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Quantity :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="quantity" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Tanggal Transaksi :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="date" class="form-control" name="tanggal_transaksi" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Harga Total :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="harga_total" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Karyawan :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="karyawan" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <input type="submit" name="submit" class="btn btn-primary" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

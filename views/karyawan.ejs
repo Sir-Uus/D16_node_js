@@ -1,0 +1,27 @@
+<main role="main" class="container">
+  <h2 class="mt-5">List Data karyawan Pak Budi</h2>
+  <a href="/tambah_karyawan" class="btn btn-success">Tambah Data karyawan</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nama karyawan</th>
+        <th scope="col">Tanggal Lahir</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Alamat</th>
+        <th scope="col">Kontak</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% myKaryawan.forEach(karyawan=>{ %>
+      <tr>
+        <td><%= karyawan.id_karyawan %></td>
+        <td><%= karyawan.nama_karyawan %></td>
+        <td><%= karyawan.tanggal_lahir %></td>
+        <td><%= karyawan.gender %></td>
+        <td><%= karyawan.alamat %></td>
+        <td><%= karyawan.kontak %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</main>

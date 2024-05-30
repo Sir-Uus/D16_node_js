@@ -1,0 +1,28 @@
+<main role="main" class="container">
+  <h2 class="mt-5">Data Transaksi <strong>Toko Pak Budi</strong></h2>
+  <a href="/tambah_transaksi" class="btn btn-success">Tambah Data Transaksi</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id Transaksi</th>
+        <th scope="col">Nama Produk</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Tanggal Transaksi</th>
+        <th scope="col">Harga Total</th>
+        <th scope="col">Karyawan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% myTransaksi.forEach(transaksi=>{ %>
+      <tr>
+        <td><%= transaksi.id_transaksi %></td>
+        <td><%= transaksi.nama_produk %></td>
+        <td><%= transaksi.quantity %></td>
+        <td><%= transaksi.tanggal_transaksi %></td>
+        <td><%= transaksi.harga_total %></td>
+        <td><%= transaksi.karyawan %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</main>

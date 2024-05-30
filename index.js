@@ -19,6 +19,15 @@ app.get("/", staticAppControllers.Dashboard);
 app.get("/produk", staticAppControllers.getHomeProduk);
 app.get("/tambah_produk", staticAppControllers.getTambahProduk);
 app.post("/tambah_produk", staticAppControllers.saveProduk);
+
+app.get("/karyawan", staticAppControllers.getHomekaryawan);
+app.get("/tambah_karyawan", staticAppControllers.getTambahKaryawan);
+app.post("/tambah_karyawan", staticAppControllers.saveKaryawan);
+
+app.get("/transaksi", staticAppControllers.getHomeTransaksi);
+app.get("/tambah_transaksi", staticAppControllers.getTambahTransaksi);
+app.post("/tambah_transaksi", staticAppControllers.saveTransaksi);
+
 app.use(errorControllers.pageNotFoundError);
 app.use(errorControllers.internalServerError);
 app.listen(port, () => {
