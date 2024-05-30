@@ -28,6 +28,10 @@ app.get("/transaksi", staticAppControllers.getHomeTransaksi);
 app.get("/tambah_transaksi", staticAppControllers.getTambahTransaksi);
 app.post("/tambah_transaksi", staticAppControllers.saveTransaksi);
 
+app.get("/investor", staticAppControllers.getHomeInvestor);
+app.get("/tambah_investor", staticAppControllers.getTambahInvestor);
+app.post("/tambah_investor", staticAppControllers.saveInvestasi);
+
 app.use(errorControllers.pageNotFoundError);
 app.use(errorControllers.internalServerError);
 app.listen(port, () => {

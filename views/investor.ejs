@@ -1,0 +1,28 @@
+<main role="main" class="container">
+    <h2 class="mt-5L">List Data investor Pak Budi</h2>
+    <a href="/tambah_investor" class="btn btn-success">Tambah Data investor</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nama Investor</th>
+                <th scope="col">Jumlah Investasi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% myInvestasi.forEach(investasi=>{ %>
+                <tr>
+                    <td>
+                        <%= investasi.id_investor %>
+                    </td>
+                    <td>
+                        <%= investasi.nama_investor %>
+                    </td>
+                    <td>
+                        <%= investasi.jumlah %>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</main> 
