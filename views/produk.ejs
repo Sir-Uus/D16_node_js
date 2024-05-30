@@ -1,0 +1,24 @@
+<main role="main" class="container">
+  <h2 class="mt-5">Data Produk</h2>
+  <a href="/tambah_produk" class="btn btn-success">Tambah Data Produk</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID produk</th>
+        <th scope="col">Nama produk</th>
+        <th scope="col">stok</th>
+        <th scope="col">harga satuan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% myProduks.forEach(produk=> { %>
+      <tr>
+        <td><%= produk.id_produk %></td>
+        <td><%= produk.nama_produk %></td>
+        <td><%= produk.stok %></td>
+        <td><%= produk.harga_satuan %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</main>
