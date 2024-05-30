@@ -11,7 +11,7 @@ exports.getTambahProduk = (req, res) => {
 };
 exports.saveProduk = (req, res) => {
   produks.push(req.body);
-  res.render("produk");
+  res.render("produk", { myProduks: produks });
 };
 // karyawan
 const Karyawans = [];
@@ -25,7 +25,7 @@ exports.getTambahKaryawan = (req, res) => {
 
 exports.saveKaryawan = (req, res) => {
   Karyawans.push(req.body);
-  res.render("karyawan");
+  res.render("karyawan", { myKaryawan: Karyawans });
 };
 //DATA TRANSAKSI
 const transaksis = [];
@@ -39,5 +39,5 @@ exports.getTambahTransaksi = (req, res) => {
 
 exports.saveTransaksi = (req, res) => {
   transaksis.push(req.body);
-  res.render("transaksi");
+  res.render("transaksi", { myTransaksi: transaksis });
 };
