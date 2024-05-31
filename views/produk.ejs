@@ -8,6 +8,7 @@
         <th scope="col">Nama produk</th>
         <th scope="col">stok</th>
         <th scope="col">harga satuan</th>
+        <th scope="col">N/A</th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +18,12 @@
         <td><%= produks.nama_produk %></td>
         <td><%= produks.stok %></td>
         <td><%= produks.harga_satuan %></td>
+        <td>
+          <a href="/update_produk" class="btn btn-warning">Edit</a>
+          <form action="/delete_produk/<%= myProduks.id_produk %>" method="post" style="display: inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </td>
       </tr>
       <% }); %>
     </tbody>

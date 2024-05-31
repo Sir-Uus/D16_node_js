@@ -10,6 +10,7 @@
         <th scope="col">Gender</th>
         <th scope="col">Alamat</th>
         <th scope="col">Kontak</th>
+        <th scope="col">N/A</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,12 @@
         <td><%= karyawan.gender %></td>
         <td><%= karyawan.alamat %></td>
         <td><%= karyawan.kontak %></td>
+        <td>
+          <a href="/update_karyawan" class="btn btn-warning">Edit</a>
+          <form action="/delete_karyawan/<%= myKaryawan.id_karyawan %>" method="post" style="display: inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </td>
       </tr>
       <% }); %>
     </tbody>

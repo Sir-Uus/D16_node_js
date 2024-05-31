@@ -1,0 +1,38 @@
+<main role="main" class="container mt-5">
+  <div class="card">
+    <h5 class="card-header">Tambah Data Investor</h5>
+    <div class="card-body">
+      <div>
+        <form action="/update_investor/<%= myInvestasi.id %>" method="post">
+          <div class="row mb-3">
+            <div class="col-md-8">
+              <input type="hidden" class="form-control" name="id_investor" value="<%= myInvestasi.id_investor %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Nama Investor :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="nama_investor" value="<%= myInvestasi.nama_investor %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Jumlah Investasi :</label>
+            </div>
+
+            <div class="col-md-8">
+              <input type="number" class="form-control" name="jumlah" value="<%= myInvestasi.jumlah %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <input type="submit" name="submit" class="btn btn-primary" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

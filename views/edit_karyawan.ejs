@@ -1,0 +1,62 @@
+<main role="main" class="container mt-5">
+  <div class="card">
+    <h5 class="card-header">Tambah Data Karyawan</h5>
+    <div class="card-body">
+      <div>
+        <form action="/update_karyawan/<%= myKaryawan.id_karyawan %>" method="post">
+          <div class="row mb-3">
+            <div class="col-md-8">
+              <input type="hidden" class="form-control" name="id_karyawan" value="<%= myKaryawan.id_karyawan %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Nama Karyawan :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="nama_karyawan" value="<%= myKaryawan.nama_karyawan %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Tanggal Lahir :</label>
+            </div>
+
+            <div class="col-md-8">
+              <input type="date" class="form-control" name="tanggal_lahir" value="<%= myKaryawan.tanggal_lahir %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Gender :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="gender" value="<%= myKaryawan.gender %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Alamat :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="form-control" name="alamat" value="<%= myKaryawan.alamat %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="">Kontak :</label>
+            </div>
+            <div class="col-md-8">
+              <input type="number" class="form-control" name="kontak" value="<%= myKaryawan.kontak %>" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <input type="submit" name="submit" class="btn btn-primary" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
