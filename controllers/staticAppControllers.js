@@ -13,13 +13,13 @@ exports.saveProduk = (req, res) => {
   produks.push(req.body);
   res.render("produk", { myProduks: produks });
 };
-exports.getUpdateFormProdukPage = (req, res) => {
+exports.editProduk = (req, res) => {
   const produkId = req.params.id_produk;
-  const produkToEdit = produks.find((p) => p.id_produk === produkId);
-  if (produkToEdit) {
-    res.render("edit_produk", { myProduks: produkToEdit });
+  const produkEdit = produks.find((p) => p.id_produk === produkId);
+  if (produkEdit) {
+    res.render("edit_produk", { myProduks: produkEdit });
   } else {
-    res.status(404).send("Produk not found");
+    res.status(404).send("User not found");
   }
 };
 
@@ -53,7 +53,7 @@ exports.deleteProduk = (req, res) => {
   const produkIndex = produks.findIndex((p) => p.id === produkId);
   if (produkIndex !== -1) {
     produks.splice(produkIndex, 1);
-    res.redirect("/");
+    res.redirect("/produk");
   } else {
     res.status(404).send("produk not found");
   }
@@ -73,32 +73,34 @@ exports.saveKaryawan = (req, res) => {
   karyawans.push(req.body);
   res.render("karyawan", { myKaryawan: karyawans });
 };
-exports.getUpdateFormKaryawanPage = (req, res) => {
-  const karyawanId = req.params.id;
-  const karyawanToEdit = karyawans.find((p) => p.id === karyawanId);
-  if (karyawanToEdit) {
-    res.render("edit_karyawan", { myKaryawan: karyawanToEdit });
+exports.editKaryawan = (req, res) => {
+  const karyawanId = req.params.id_karyawan;
+  const karyawanEdit = karyawans.find((p) => p.id_karyawan === karyawanId);
+  if (karyawanEdit) {
+    res.render("edit_karyawan", { myKaryawan: karyawanEdit });
   } else {
-    res.status(404).send("karyawan not found");
+    res.status(404).send("Karyawan not found");
   }
 };
 exports.updateKaryawan = (req, res) => {
-  const karyawanId = req.params.id;
-  const updatedKaryawan = req.body;
-  const karyawanIndex = karyawans.findIndex((p) => p.id === karyawanId);
-  if (karyawanIndex !== -1) {
-    karyawans[karyawanIndex] = { ...updatedKaryawan, id: karyawanId };
-    res.redirect("/");
-  } else {
-    res.status(404).send("karyawan not found");
+  const id_karyawan = req.params.id_karyawan;
+  const updatedkaryawan = req.body;
+
+  // Cari produk berdasarkan id_produk dan perbarui propertinya
+  const index = karyawans.findIndex((p) => p.id_karyawan === id_karyawan);
+  if (index !== -1) {
+    karyawans[index] = { ...karyawans[index], ...updatedkaryawan };
   }
+
+  // Redirect kembali ke halaman daftar produk
+  res.redirect("/karyawan");
 };
 exports.deleteKaryawan = (req, res) => {
   const karyawanId = req.params.id;
   const karyawanIndex = karyawans.findIndex((p) => p.id === karyawanId);
   if (karyawanIndex !== -1) {
     karyawans.splice(karyawanIndex, 1);
-    res.redirect("/");
+    res.redirect("/karyawan");
   } else {
     res.status(404).send("karyawan not found");
   }
@@ -130,32 +132,34 @@ exports.saveInvestasi = (req, res) => {
   investasis.push(req.body);
   res.render("investor", { myInvestasi: investasis });
 };
-exports.getUpdateFormInvestorPage = (req, res) => {
-  const investorId = req.params.id;
-  const investorToEdit = investasis.find((p) => p.id === investorId);
-  if (investorToEdit) {
-    res.render("edit_investor", { myInvestasi: investorToEdit });
+exports.editInvestor = (req, res) => {
+  const investorId = req.params.id_investor;
+  const investorEdit = investasis.find((p) => p.id_investor === investorId);
+  if (investorEdit) {
+    res.render("edit_investor", { myInvestasi: investorEdit });
   } else {
-    res.status(404).send("Investor not found");
+    res.status(404).send("investor not found");
   }
 };
 exports.updateInvestor = (req, res) => {
-  const investorId = req.params.id;
-  const updatedInvestor = req.body;
-  const investorIndex = investasis.findIndex((p) => p.id === investorId);
-  if (investorIndex !== -1) {
-    investasis[investorIndex] = { ...updatedInvestor, id: investorId };
-    res.redirect("/");
-  } else {
-    res.status(404).send("Investor not found");
+  const id_investor = req.params.id_investor;
+  const updatedinvestor = req.body;
+
+  // Cari produk berdasarkan id_produk dan perbarui propertinya
+  const index = investasis.findIndex((p) => p.id_investor === id_investor);
+  if (index !== -1) {
+    investasis[index] = { ...investasis[index], ...updatedinvestor };
   }
+
+  // Redirect kembali ke halaman daftar produk
+  res.redirect("/investor");
 };
 exports.deleteInvestor = (req, res) => {
   const investorId = req.params.id;
   const investorIndex = investasis.findIndex((p) => p.id === investorId);
   if (investorIndex !== -1) {
     investasis.splice(investorIndex, 1);
-    res.redirect("/");
+    res.redirect("/investor");
   } else {
     res.status(404).send("investor not found");
   }

@@ -20,16 +20,16 @@ app.get("/", staticAppControllers.Dashboard);
 app.get("/produk", staticAppControllers.getHomeProduk);
 app.get("/tambah_produk", staticAppControllers.getTambahProduk);
 app.post("/tambah_produk", staticAppControllers.saveProduk);
-app.get("/update_produk", staticAppControllers.getUpdateFormProdukPage);
+app.get("/update_produk/:id_produk", staticAppControllers.editProduk);
 app.post("/update_produk/:id_produk", staticAppControllers.updateProduk);
-app.post("/delete_produk", staticAppControllers.deleteProduk);
+app.post("/delete_produk/:id_produk", staticAppControllers.deleteProduk);
 
 app.get("/karyawan", staticAppControllers.getHomekaryawan);
 app.get("/tambah_karyawan", staticAppControllers.getTambahKaryawan);
 app.post("/tambah_karyawan", staticAppControllers.saveKaryawan);
-app.get("/update_karyawan", staticAppControllers.getUpdateFormKaryawanPage);
-app.post("/update_karyawan", staticAppControllers.updateKaryawan);
-app.post("/delete_karyawan", staticAppControllers.deleteKaryawan);
+app.get("/update_karyawan/:id_karyawan", staticAppControllers.editKaryawan);
+app.post("/update_karyawan/:id_karyawan", staticAppControllers.updateKaryawan);
+app.post("/delete_karyawan/:id_karyawan", staticAppControllers.deleteKaryawan);
 
 app.get("/transaksi", staticAppControllers.getHomeTransaksi);
 app.get("/tambah_transaksi", staticAppControllers.getTambahTransaksi);
@@ -38,11 +38,11 @@ app.post("/tambah_transaksi", staticAppControllers.saveTransaksi);
 app.get("/investor", staticAppControllers.getHomeInvestor);
 app.get("/tambah_investor", staticAppControllers.getTambahInvestor);
 app.post("/tambah_investor", staticAppControllers.saveInvestasi);
-app.get("/update_investor", staticAppControllers.getUpdateFormInvestorPage);
-app.post("/update_investor", staticAppControllers.updateInvestor);
-app.post("/delete_investor", staticAppControllers.deleteInvestor);
+app.get("/update_investor/:id_investor", staticAppControllers.editInvestor);
+app.post("/update_investor/:id_investor", staticAppControllers.updateInvestor);
+app.post("/delete_investor/:id_investor", staticAppControllers.deleteInvestor);
 
-app.use(errorControllers.pageNotFoundError);
+// app.use(errorControllers.pageNotFoundError);
 app.use(errorControllers.internalServerError);
 app.listen(port, () => {
   console.log(`The express.js server has started and listening on port number: ${port}`);

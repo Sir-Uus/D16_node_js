@@ -17,8 +17,8 @@
         <td><%= investasi.nama_investor %> `</td>
         <td><%= investasi.jumlah %></td>
         <td>
-          <a href="/update_investor" class="btn btn-warning">Edit</a>
-          <form action="/delete_invesrtor/<%= myInvestasi.id_investor %>" method="post" style="display: inline">
+          <a href="/update_investor/<%= investasi.id_investor %>" class="btn btn-warning">Edit</a>
+          <form action="/delete_investor/<%= investasi.id_investor %>" method="post" style="display: inline">
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
         </td>

@@ -23,8 +23,8 @@
         <td><%= karyawan.alamat %></td>
         <td><%= karyawan.kontak %></td>
         <td>
-          <a href="/update_karyawan" class="btn btn-warning">Edit</a>
-          <form action="/delete_karyawan/<%= myKaryawan.id_karyawan %>" method="post" style="display: inline">
+          <a href="/update_karyawan/<%= karyawan.id_karyawan %>" class="btn btn-warning">Edit</a>
+          <form action="/delete_karyawan/<%= karyawan.id_karyawan %>" method="post" style="display: inline">
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
         </td>

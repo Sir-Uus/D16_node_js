@@ -19,8 +19,8 @@
         <td><%= produks.stok %></td>
         <td><%= produks.harga_satuan %></td>
         <td>
-          <a href="/update_produk" class="btn btn-warning">Edit</a>
-          <form action="/delete_produk/<%= myProduks.id_produk %>" method="post" style="display: inline">
+          <a href="/update_produk/<%= produks.id_produk %>" class="btn btn-warning">Edit</a>
+          <form action="/delete_produk/<%= produks.id_produk %>" method="post" style="display: inline">
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
         </td>
